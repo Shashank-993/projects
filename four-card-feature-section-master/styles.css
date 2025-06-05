@@ -73,6 +73,7 @@ h2 {
 .card-4 {
   width: 300px;
   max-width: 300px;
+  min-width:200px;
   height: 200px;
   border-radius: 7px;
   position: relative;

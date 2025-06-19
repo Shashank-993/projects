@@ -1,0 +1,146 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Red Hat Display, sans-serif;
+  min-height: 100vh;
+  background-color: var(--pale-blue);
+  background-image: url('/images/desktop-bg.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  position: relative;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+:root {
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
+}
+h2,
+h3 {
+  color: var(--dark-blue);
+  font-weight: 900;
+}
+p {
+  color: var(--desaturated-blue);
+  font-weight: 600;
+}
+.container {
+  width: clamp(300px, 90%, 400px);
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr 2fr;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: var(--very-pale-blue);
+}
+.content-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper {
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.img-container,
+.content-container,
+.plan-container,
+.summary {
+  width: 100%;
+}
+.img-container img {
+  width: 100%;
+  height: 100%;
+}
+.wrapper > .summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.wrapper .summary > p {
+  text-align: center;
+  width: 90%;
+}
+
+.plan-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: hsl(225, 100%, 95.9%);
+  border-radius: 15px;
+}
+
+.plan-container .plan {
+  display: flex;
+  gap: 1rem;
+}
+.plan-container a {
+  color: var(--bright-blue);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+.wrapper > button {
+  width: 100%;
+  padding: 15px 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+@keyframes popup {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-2px);
+  }
+}
+.wrapper > .payment {
+  background: none;
+  background-color: var(--bright-blue);
+  color: var(--very-pale-blue);
+  border-radius: 10px;
+  font-family: Red Hat Display, sans-serif;
+  font-weight: 700;
+  box-shadow: var(--pale-blue) 0px 15px 8px;
+}
+.payment:hover {
+  animation: popup 0.2s ease-in-out;
+  animation-fill-mode: forwards;
+}
+.wrapper > .cancel {
+  background: none;
+  background-color: var(--very-pale-blue);
+  color: var(--desaturated-blue);
+  font-family: Red Hat Display, sans-serif;
+  font-weight: 900;
+}
+@media (min-width: 768px) {
+  body {
+    background-image: url('/images/desktop-bg.svg') ;
+    
+  }
+}
